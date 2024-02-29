@@ -457,3 +457,54 @@ main hr{
     
     background: #E5E5E5;
 }
+
+
+footer {
+    display: grid;
+    margin-top: -2px;
+    padding: 2% 100px 2% 100px;
+    background: #5e5e5e10;
+    grid-template-columns: auto auto auto;
+}
+
+footer .logo{
+    text-align: left;
+}
+
+footer .logo{
+    font-size: 18px;
+    font-weight: 700;
+    color: #495057;
+
+}
+
+footer .logo:after {
+    content: '.';
+    color: #DDBEA9 ;
+}
+
+
+footer .nav{
+    text-align: center;
+    position: relative;
+    top: 25%;
+}
+
+footer .nav a{
+    color: #49505750;
+    padding: 0px 12.5px 0px 12.5px;
+}
+
+footer a:hover{
+    color: #495057;
+
+    text-decoration-line: underline;
+    text-decoration-color: #DDBEA9;
+    text-decoration-thickness: 2px;
+}
+
+footer .copyright{
+    text-align: right;
+    position: relative;
+    top: 25%;
+}
