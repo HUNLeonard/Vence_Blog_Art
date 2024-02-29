@@ -1,16 +1,12 @@
 html{
     background: #5E5E5E25;
-    display: table;
-    margin: auto;
 }
 
 body {
-    width: 1440px;
+    width: 100%;
     height: auto;
     background: #F8F9FA;
 
-    display: table-cell;
-    vertical-align:top;
     
     color:#495057;
     font-family: Poppins;
@@ -20,6 +16,7 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
 
 a{
     text-decoration: none;
@@ -83,3 +80,84 @@ header {
     margin: 2% 100px 2% 100px;
     grid-template-columns: auto auto auto;
 }
+
+
+.blog-infos{
+    margin-top: -100px;
+    display: flex;
+    justify-content: flex-end;
+
+    grid-template-columns: auto auto;
+}
+
+.blog-image{
+    background-image: url('./assets/Back 1.jpg');
+
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+
+    margin: 0px 100px 0px 0px;
+    height: 600px;
+    width: auto;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.blog-pages{
+    width: 735px;
+
+    margin-top: 230px;
+    text-align: right;
+    margin-right: 30px;
+
+}
+
+.blog-page{
+    margin-bottom: 15px;
+}
+
+.blog-page a:not(.current){
+    color: #49505750;
+}
+
+.blog-page .current{
+    color: #495057;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.blog-square{
+    background: #5E5E5E10;
+    width: 705px;
+    height: auto;
+}
+
+.blog-details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 499px;
+    height: auto;
+
+    margin-top: 175px;
+    margin: 175px 106px 75px 106px;
+
+    /*background: #5E5E5E50;*/
+}
+
+
+.blog-title{
+    color: #212529;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.blog-details hr{
+    background-color: #E5E5E5;
+    height: 1px;
+    width: 100%;
+    border: none;
+}
+
