@@ -1,10 +1,12 @@
 html{
     background: #5E5E5E25;
     zoom: 1.1;
+    display: table;
+    margin: auto;
 }
 
 body {
-    width: 100%;
+    width: 1440px;
     height: auto;
     background: #F8F9FA;
 
@@ -277,4 +279,61 @@ header {
     text-decoration-line: underline;
     text-decoration-color: #DDBEA9;
     text-decoration-thickness: 2px;
+}
+
+
+.instagram{
+    margin: 0px 0px 0px 100px;
+    background: #ddbea93b;
+    
+    height: 600px;
+    background-image: url('./assets/Frame 2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+
+}
+
+.instagram-contents{
+    padding: 230px 0px 230px 430px;
+    display: grid;
+    grid-template-columns: auto max-content;
+}
+
+.instagram-details{
+    width: 393px;
+    height: auto;
+
+    color: #C4C4C4;
+    text-align: center;
+}
+
+.instagram-details > div{
+    margin: 15px 0px;
+}
+
+.instagram-pages{
+    text-align: right;
+    position: relative;
+    margin: 0px 205px 0px 0px;
+
+    display: grid;
+    gap: 25px;
+}
+
+.instagram-pages a{
+    color: #C4C4C4;
+    margin: 0px 0px 0px 20px;
+}
+
+.instagram-pages span{
+    color: #C4C4C4;
+    font-size: 25px;
+}
+
+.instagram-title, .instagram .current{
+    font-size: 25px;
+    font-weight: 700;
+    color: #F8F9FA;
 }
