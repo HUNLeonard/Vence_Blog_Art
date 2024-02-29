@@ -1,5 +1,6 @@
 html{
     background: #5E5E5E25;
+    zoom: 1.1;
 }
 
 body {
@@ -161,3 +162,119 @@ header {
     border: none;
 }
 
+
+.la{
+    margin: 0px 100px 100px 100px;
+}
+
+.la-title{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0px 0px 45px 0px;
+}
+
+.la-nav span{
+    margin-right: 25px;
+    cursor: pointer;
+    color: #C4C4C4;
+}
+
+.la-nav .current{
+    color:#495057;
+    font-weight: 500;
+}
+
+
+.articles {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 40px; 
+  margin: 45px 0px 70px 0px;
+}
+
+
+.article {
+  width: 287px;
+  /* background: #2291ff3f; */
+  height: fit-content;
+}
+
+
+.article .one{
+    background-image: url('./assets/Frame 1.jpg');
+    height: 200px;
+}
+.article .two{
+    background-image: url('./assets/Frame 2.jpg');
+    height: 370px;
+}
+.article .three{
+    background-image: url('./assets/Frame 3.jpg');
+    height: 287px;
+}
+.article .four{
+    background-image: url('./assets/Frame 4.jpg');
+    height: 370px;
+}
+.article .five{
+    background-image: url('./assets/Frame 5.jpg');
+    height: 370px;
+}
+.article .six{
+    background-image: url('./assets/Frame 6.jpg');
+    height: 287px;
+}
+.article .seven{
+    background-image: url('./assets/Frame 7.jpg');
+    height: 200px;
+}
+.article .eight{
+    background-image: url('./assets/Frame 8.jpg');
+    height: 200px;
+}
+
+
+.article-image{
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.article-details{
+    display: grid;
+    padding: 0px;
+    gap: 20px;
+    height: auto;
+}
+
+
+.article-title{
+    font-size: 16px;
+    color: #212529;
+    font-weight: 500;
+}
+
+
+.la-pages{
+    text-align: center;
+}
+
+.la-pages a{
+    font-size: 14px;
+    color: #49505750;
+    font-weight: 500;
+    margin: 0px 7px;
+}
+
+.la-pages .current{
+    color: #495057;
+    text-decoration-line: underline;
+    text-decoration-color: #DDBEA9;
+    text-decoration-thickness: 2px;
+}
