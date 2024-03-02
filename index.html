@@ -59,100 +59,22 @@
         </article>
 
         <article class="la">
-            <p class="la-title">Latest Articles</p>
-            <div class="la-nav">
+            <h2 class="la-title">Latest Articles</h2>
+            <nav class="la-nav">
                 <span class="current">Show All</span>
                 <span>Technology</span>
                 <span>Culture</span>
                 <span>Fashion</span>
                 <span>Trending</span>
+            </nav>
+
+            <div id="articles">
+                <!-- Articles will be dynamically loaded here -->
             </div>
 
-            <div class="articles">
-                <div class="article">
-                    <div class="article-image one"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Lily Allen Has Two New Songs on ‘Pan’ Soundtrack</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <div class="article-image two"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Less than a quarter of FTSE board members are women</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <div class="article-image three"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Anja Wicki’s sarcastically sweet comic illustrations</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-image four"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">We speak to Ace & Tate Creative Fund Board Members</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-image five"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Lily Allen Has Two New Songs on ‘Pan’ Soundtrack</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-image six"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Less than a quarter of FTSE board members are women</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-image seven"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Anja Wicki’s sarcastically sweet comic illustrations</div>
-                        <civ class="article-desc">Many years ago, I worked for my parents who own a video production company.</civ>
-                    </div>
-                </div>
-
-                <div class="article">
-
-                    <div class="article-image eight"></div>
-                    <div class="article-details">
-                        <div class="article-time"><time datetime="DD.MM.YYYY">29.Jun.2021</time></div>
-                        <div class="article-title">Anja Wicki’s sarcastically sweet comic illustrations</div>
-                        <civ class="article-desc">We speak to Ace & Tate Creative Fund Board Members</civ>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="la-pages">
-                <a href="#" class="current">01</a>
-                <a href="#">02</a>
-                <a href="#">Next Page</a>
-            </div>
+            <nav id="la-pages">
+                <!-- Latest Article links will be dynamically loaded here -->
+            </nav>
         </article>
 
         <article class="creative">
@@ -226,5 +148,7 @@
         </div>
         <div class="copyright"><span>© 2022, All Rights Reserved</span></div>
     </footer>
+
+    <script src="./scripts/articles.js"></script>
 </body>
 </html>

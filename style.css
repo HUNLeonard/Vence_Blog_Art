@@ -107,7 +107,6 @@ header .nav-list li, header .others-list li{
 
 .blog-image{
     position: relative;
-    background-image: url('./assets/Back 1.jpg');
 
     background-repeat: no-repeat;
     background-size:cover;
@@ -197,9 +196,7 @@ header .nav-list li, header .others-list li{
 }
 
 
-
-
-.articles {
+#articles {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
@@ -208,7 +205,7 @@ header .nav-list li, header .others-list li{
 }
 
 @media (max-width: 760px) {
-    .articles {
+    #articles {
         justify-content: center;
     }
 }
@@ -216,44 +213,9 @@ header .nav-list li, header .others-list li{
 
 .article {
   width: 287px;
-  /* background: #2291ff3f; */
+  /*background: #2291ff3f;*/
   height: fit-content;
 }
-
-
-.article .one{
-    background-image: url('./assets/Frame 1.jpg');
-    height: 200px;
-}
-.article .two{
-    background-image: url('./assets/Frame 2.jpg');
-    height: 370px;
-}
-.article .three{
-    background-image: url('./assets/Frame 3.jpg');
-    height: 287px;
-}
-.article .four{
-    background-image: url('./assets/Frame 4.jpg');
-    height: 370px;
-}
-.article .five{
-    background-image: url('./assets/Frame 5.jpg');
-    height: 370px;
-}
-.article .six{
-    background-image: url('./assets/Frame 6.jpg');
-    height: 287px;
-}
-.article .seven{
-    background-image: url('./assets/Frame 7.jpg');
-    height: 200px;
-}
-.article .eight{
-    background-image: url('./assets/Frame 8.jpg');
-    height: 200px;
-}
-
 
 .article-image{
     width: 100%;
@@ -281,12 +243,12 @@ header .nav-list li, header .others-list li{
 }
 
 
-.la-pages{
+#la-pages{
     text-align: center;
     align-items: center;
 }
 
-.la-pages a{
+#la-pages a{
 
     font-size: 14px;
     color: #49505750;
@@ -296,7 +258,7 @@ header .nav-list li, header .others-list li{
     margin-right: auto;
 }
 
-.la-pages .current{
+#la-pages .current{
     color: #495057;
     text-decoration-line: underline;
     text-decoration-color: #DDBEA9;
@@ -310,7 +272,6 @@ header .nav-list li, header .others-list li{
     background: #ddbea93b;
     
     height: 600px;
-    background-image: url('./assets/Frame 2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -400,8 +361,6 @@ header .nav-list li, header .others-list li{
 .editor-popular{
     height: 623px;
 
-    background-image: url('./assets/Frame 12.jpg');
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -423,17 +382,6 @@ header .nav-list li, header .others-list li{
     gap: 20px;
 }
 
-.editor-page > .one{
-    background-image: url('./assets/Frame 11.jpg');
-}
-
-.editor-page > .two{
-    background-image: url('./assets/Frame 6.jpg');
-}
-
-.editor-page > .three{
-    background-image: url('./assets/Frame 9.jpg');
-}
 
 .editor-page-image{
     height: 181px;
