@@ -28,6 +28,10 @@ i{
     cursor: pointer;
 }
 
+h1,h2,h3,p{
+    margin: 0px;
+}
+
 header {
     display: grid;
     margin: 2% 5vw 2% 5vw;
@@ -111,7 +115,7 @@ header .nav-list li, header .others-list li{
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
-
+    
     margin: 0px 5vw 0px 0px;
     height: 600px;
     width: auto;
@@ -131,17 +135,17 @@ header .nav-list li, header .others-list li{
     text-align: right;
 }
 
-.blog-page a:not(.current){
+.blog-pages > a:not(.current){
     color: #49505750;
 }
 
-.blog-page .current{
+.blog-pages .current{
     color: #495057;
     font-size: 25px;
     font-weight: 700;
 }
 
-.blog-page .current::before{
+.blog-pages .current::before{
     cursor: default;
     content: '-';
     color: #C4C4C4;
