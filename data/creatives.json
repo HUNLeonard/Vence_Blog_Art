@@ -1,0 +1,39 @@
+{
+    "creatives": [
+        {
+            "image": "Frame 2.jpg",
+            "time": "29.Jun.2021",
+            "title": "Instagram artists with great photography skills"
+        },
+        {
+            "image": "Creative 1.jpg",
+            "time": "29.Jun.2021",
+            "title": "Creative Title 2"
+        },
+        {
+            "image": "Creative 2.jpg",
+            "time": "30.Jun.2021",
+            "title": "Creative Title 3"
+        },
+        {
+            "image": "Creative 3.jpg",
+            "time": "01.Jul.2021",
+            "title": "Creative Title 4"
+        },
+        {
+            "image": "Creative 4.jpg",
+            "time": "02.Jul.2021",
+            "title": "Creative Title 5"
+        },
+        {
+            "image": "Creative 5.jpg",
+            "time": "03.Jul.2021",
+            "title": "Creative Title 6"
+        },
+        {
+            "image": "Creative 6.jpg",
+            "time": "04.Jul.2021",
+            "title": "Creative Title 7"
+        }
+    ]
+}

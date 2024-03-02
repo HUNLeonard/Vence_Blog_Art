@@ -1,0 +1,54 @@
+{
+    "blogs": [
+      {
+        "image": "Back 1.jpg",
+        "time": "29.Jun.2021",
+        "blog-title": "Renzo Patton combines design and nature",
+        "blog-desc": "Black knicker lining concealed back zip fasten swing style high waisted double layer full pattern floral.",
+        "blog-auth": "Peter Rowardson"
+      },
+      {
+        "image": "Back 2.jpg",
+        "time": "30.Jun.2021",
+        "blog-title": "I Like to Keep Things Simple to Appreciate the Details",
+        "blog-desc": "Many years ago, I worked for my parents who own a video production company.",
+        "blog-auth": ""
+      },
+      {
+        "image": "Back 3.jpg",
+        "time": "01.Jul.2021",
+        "blog-title": "Instagram artists with great photography skills",
+        "blog-desc": "",
+        "blog-auth": "Tomas Edwardo"
+      },
+      {
+        "image": "Back 4.jpg",
+        "time": "01.Jul.2021",
+        "blog-title": "Instagram artists with great photography skills",
+        "blog-desc": "",
+        "blog-auth": "Tomas Edwardo"
+      },
+      {
+        "image": "Back 5.jpg",
+        "time": "01.Jul.2021",
+        "blog-title": "I Like to Keep Things Simple to Appreciate the Details",
+        "blog-desc": "Many years ago, I worked for my parents who own a video production company.",
+        "blog-auth": "Peter Roward"
+      },
+      {
+        "image": "Back 6.jpg",
+        "time": "01.Jul.2021",
+        "blog-title": "Richard Norton photorealistic rendering as real photos",
+        "blog-desc": "",
+        "blog-auth": ""
+      },
+      {
+        "image": "Back 7.jpg",
+        "time": "01.Jul.2021",
+        "blog-title": "Richard Norton photorealistic rendering as real photos",
+        "blog-desc": "Many years ago, I worked for my parents who own a video production company.",
+        "blog-auth": "Peter Rowardson"
+      }
+    ]
+  }
+  

@@ -1,0 +1,59 @@
+{
+    "articles": [
+        {
+            "image": "Frame 1.jpg",
+            "title": "Lily Allen Has Two New Songs on ‘Pan’ Soundtrack",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "200px"
+          },
+          {
+            "image": "Frame 2.jpg",
+            "title": "Less than a quarter of FTSE board members are women",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "370px"
+          },
+          {
+            "image": "Frame 3.jpg",
+            "title": "Anja Wicki’s sarcastically sweet comic illustrations",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "287px"
+          },
+          {
+            "image": "Frame 4.jpg",
+            "title": "We speak to Ace & Tate Creative Fund Board Members",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "370px"
+          },
+          {
+            "image": "Frame 5.jpg",
+            "title": "Lily Allen Has Two New Songs on ‘Pan’ Soundtrack",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "370px"
+          },
+          {
+            "image": "Frame 6.jpg",
+            "title": "Less than a quarter of FTSE board members are women",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "287px"
+          },
+          {
+            "image": "Frame 7.jpg",
+            "title": "Anja Wicki’s sarcastically sweet comic illustrations",
+            "desc": "Many years ago, I worked for my parents who own a video production company.",
+            "time": "29.Jun.2021",
+            "height": "200px"
+          },
+          {
+            "image": "Frame 8.jpg",
+            "title": "Anja Wicki’s sarcastically sweet comic illustrations",
+            "desc": "We speak to Ace & Tate Creative Fund Board Members",
+            "height": "200px"
+          }
+        ]
+      }
