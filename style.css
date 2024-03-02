@@ -270,7 +270,7 @@ header .nav-list li, header .others-list li{
 }
 
 
-.creative{
+#creative{
     position: relative;
     margin: 0px 0px 0px 5vw;
     background: #ddbea93b;
@@ -297,7 +297,7 @@ header .nav-list li, header .others-list li{
     text-align: center;
 }
 
-.creative-details > div{
+.creative-details > *{
     margin: 15px 0px;
 }
 
@@ -307,7 +307,7 @@ header .nav-list li, header .others-list li{
     gap: 25px;
 }
 
-.creative-pages a{
+.creative-pages > a{
     color: #C4C4C4;
     margin: 0px 0px 0px 20px;
 }
@@ -319,7 +319,7 @@ header .nav-list li, header .others-list li{
 }
 
 
-.creative-title, .creative .current{
+.creative-title, .creative-pages .current{
     font-size: 25px;
     font-weight: 700;
     color: #F8F9FA;
