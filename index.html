@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vence - Blog Art</title>
-    <script src="https://kit.fontawesome.com/c9916f1c5f.js" crossorigin="anonymous"></script>
+
+    <!-- Add meta description -->
+    <meta name="description" content="Random meta description here. This will be displayed in the search results.">
+
+    <!-- Import and preload the CSS files -->
+    <link rel="preload" href="./style/body.css" as="style">
+    <link rel="preload" href="./style/blogs.css" as="style">
+    <link rel="preload" href="./style/larticles.css" as="style">
+    <link rel="preload" href="./style/creative.css" as="style">
+    <link rel="preload" href="./style/editors.css" as="style">
     
     <!-- Link the CSS files -->
     <link rel="stylesheet" href="./style/body.css">
@@ -12,59 +21,73 @@
     <link rel="stylesheet" href="./style/larticles.css">
     <link rel="stylesheet" href="./style/creative.css">
     <link rel="stylesheet" href="./style/editors.css">
+
+    <!-- Import and preload the JS files -->
+    <link rel="preload" href="./scripts/blogs.js" as="script" />
+    <link rel="preload" href="./scripts/larticles.js" as="script" />
+    <link rel="preload" href="./scripts/creative.js" as="script" />
+    <link rel="preload" href="./scripts/editors.js" as="script" />
+
+    <!-- Import and preload the API Background images files -->
+    <link rel="preconnect" href="https://api.slingacademy.com">
+
+
+    <script src="https://kit.fontawesome.com/c9916f1c5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <span class="logo-text">VENCE</span>
-        </div>
+        <div class="logo">VENCE</div>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Main Navigation">
             <a href="#">Example</a>
             <a href="#">Inspiration</a>
             <a href="#">Tutorials</a>
             <a href="#">Courses</a>
         </nav>
 
-        <nav class="others">
+        <nav class="others" aria-label="Social Media Navigation">
             <a href="#">Fb</a>
             <a href="#">Tw</a>
             <a href="#">Ln</a>
             <span>|</span>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </nav>
     </header>
-    <main id="main-content">
+    <main>
         <article id="blog">
         </article>
 
-        <article class="la">
-            <h2 class="la-title">Latest Articles</h2>
-            <nav class="la-nav">
-                <span class="current">Show All</span>
-                <span>Technology</span>
-                <span>Culture</span>
-                <span>Fashion</span>
-                <span>Trending</span>
-            </nav>
-
-            <div id="larticles"></div>
-
-            <nav id="la-pages"></nav>
+        <article class="la" aria-label="Latest Articles">
+            <header>
+                <h2 class="la-title">Latest Articles</h2>
+                <nav class="la-nav">
+                    <span class="current">Show All</span>
+                    <span>Technology</span>
+                    <span>Culture</span>
+                    <span>Fashion</span>
+                    <span>Trending</span>
+                </nav>
+            </header>
+            <article id="larticles"></article>
+            <footer>
+                <nav id="la-pages"></nav>
+            </footer>
         </article>
 
         <article id="creative">
         </article>
 
         <article class="editor">
-            <p class="editor-title">Editor’s Picks</p>
+            <header>
+                <p class="editor-title">Editor’s Picks</p>
+            </header>
             <div id="editor-content"></div>
         </article>
         <hr>
     </main>
     <footer>
         <div class="logo">VENCE Studio</div>
-        <nav class="nav">
+        <nav class="nav" aria-label="Footer Navigation">
             <a href="#">About Solution</a>
             <a href="#">Case Study</a>
             <a href="#">Agency</a>
