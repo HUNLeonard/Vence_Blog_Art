@@ -32,6 +32,8 @@
     height: 600px;
     width: auto;
     border-radius: 0px 5px 5px 0px;
+
+    transition: all 0.1s;
 }
 
 .blog-pages{

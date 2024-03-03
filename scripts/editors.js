@@ -1,48 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const editorContent = document.getElementById('editor-content');
+    const editorPages = document.querySelector('.editor-pages');
     
     // Load JSON data
     fetch('../data/editors.json')
     .then(response => response.json())
     .then(data => {
         // Populate editor's picks
-        const editorPages = document.createElement('div');
-        editorPages.classList.add('editor-pages');
-
         data.editors.forEach(editor => {
             const editorPage = createEditorPage(editor);
             editorPages.appendChild(editorPage);
         });
-        editorContent.appendChild(editorPages);
 
         // Add popular editor's pick
-        const popularEditor = data.popular[0]; // Assuming 'popular' contains the popular editor's data
-        const editorPopular = document.createElement('div');
-        editorPopular.classList.add('editor-popular');
-        editorPopular.style.backgroundImage =`url('./assets/editors/${popularEditor.image}')`;
+        const popularEditor = data.popular[0];
 
-        const editorPopularDetails = document.createElement('div');
-        editorPopularDetails.classList.add('editor-popular-details');
-
-        const popularDetailTime = document.createElement('time');
-        popularDetailTime.classList.add('editor-popular-time');
+        document.querySelector('.editor-popular').style.backgroundImage =`url('./assets/editors/${popularEditor.image}')`;
+        const popularDetailTime = document.querySelector('.editor-popular-time');
         popularDetailTime.setAttribute('datetime', popularEditor.time);
         popularDetailTime.textContent = popularEditor.time;
-        editorPopularDetails.appendChild(popularDetailTime);
-
-        const popularDetailTitle = document.createElement('h3');
-        popularDetailTitle.classList.add('editor-popular-title');
-        popularDetailTitle.textContent = popularEditor.title;
-        editorPopularDetails.appendChild(popularDetailTitle);
-
-        const popularDetailDesc = document.createElement('p');
-        popularDetailDesc.classList.add('editor-popular-desc');
-        popularDetailDesc.textContent = popularEditor.desc;
-        editorPopularDetails.appendChild(popularDetailDesc);
-
-        editorPopular.appendChild(editorPopularDetails);
-
-        editorContent.appendChild(editorPopular);
+        document.querySelector('.editor-popular-title').textContent = popularEditor.title;
+        document.querySelector('.editor-popular-desc').textContent = popularEditor.desc;
     })
     .catch(error => console.error('Error fetching data:', error));
 });
@@ -54,6 +31,7 @@ function createEditorPage(editor){
     const editorPageImage = document.createElement('div');
     editorPageImage.classList.add('editor-page-image');
     editorPageImage.style.backgroundImage = `url('./assets/editors/${editor.image}')`;
+    editorPageImage.setAttribute('alt', "Editor's Pick Image");
     editorPage.appendChild(editorPageImage);
 
     const editorPageDetails = document.createElement('div');
