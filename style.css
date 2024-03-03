@@ -200,7 +200,7 @@ header .nav-list li, header .others-list li{
 }
 
 
-#articles {
+#larticles {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
@@ -209,7 +209,7 @@ header .nav-list li, header .others-list li{
 }
 
 @media (max-width: 760px) {
-    #articles {
+    #larticles {
         justify-content: center;
     }
 }
