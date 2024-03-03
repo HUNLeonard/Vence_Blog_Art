@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+html{
+    background: #F8F9FA;
+    zoom: 1.1;
+    min-width: 550px;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background: #F8F9FA;
+    overflow-x: hidden;
+    
+    color:#495057;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 400; 
+
+    padding: 0px;
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+i,button{
+    cursor: pointer;
+}
+
+h1,h2,h3,p{
+    margin: 0px;
+}
+
+hr{
+    border: none;
+    background-color: #E5E5E5;
+}
+
+main hr{
+    height: 2px;
+    line-height: 0px;
+    margin: 0px 5vw;
+}
+
+body > header {
+    display: grid;
+    margin: 2% 5vw 2% 5vw;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    vertical-align: middle;
+}
+
+body > header > *{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+body > header .logo{
+    text-align: left;
+    color:#495057;
+    font-size: 18px;
+    font-weight: 700;  
+}
+
+body > header .logo:after {
+    content: '.';
+    color: #DDBEA9 ;
+}
+
+body > header .nav{
+    text-align: center;
+}
+
+body > header .others{
+    text-align: right;
+}
+
+body > header button{
+    border: none;
+    background: #F8F9FA;
+}
+
+body > header a, body > header span:not(.logo-text), body > header i{
+    color: #49505750;
+    padding: 5px;
+}
+
+body > header a:hover{
+    color: #495057;
+
+    text-decoration-line: underline;
+    text-decoration-color: #DDBEA9;
+    text-decoration-thickness: 2px;
+}
+
+body > header i:hover{
+    color: #495057;
+}
+
+body > header .nav-list li, body > header .others-list li{
+    margin: 0px 5px;
+}
+
+
+body > footer {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
+
+    margin-top: -2px;
+    padding: 2% 5vw 2% 5vw;
+    background: #5e5e5e10;
+}
+
+body > footer > *{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+body > footer .logo{
+    text-align: left;
+}
+
+body > footer .logo{
+    font-size: 18px;
+    font-weight: 700;
+    color: #495057;
+}
+
+body > footer .logo:after {
+    content: '.';
+    color: #DDBEA9 ;
+}
+
+body > footer .nav{
+    text-align: center;
+}
+
+body > footer .nav a{
+    color: #49505750;
+    margin: 0px 12.5px 0px 12.5px;
+}
+
+body > footer a:hover{
+    color: #495057;
+
+    text-decoration-line: underline;
+    text-decoration-color: #DDBEA9;
+    text-decoration-thickness: 2px;
+}
+
+body > footer .copyright{
+    text-align: right;
+}

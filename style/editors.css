@@ -1,0 +1,109 @@
+.editor{
+    margin-top: -100px;
+    background: #5e5e5e10;
+    padding:200px 5vw 100px 5vw;
+}
+
+@media (min-width: 1235px) { .editors { height: 1684px; }}
+@media (max-width: 1235px) { .editors { height: 1011px; }}
+
+
+.editor-title{
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 50px;
+    color: #495057;
+}
+
+#editor-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 50px;
+}
+#editor-content > *{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+
+.editor-pages{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.editor-popular{
+    height: 623px;
+    width: auto;
+    background: #212529;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+}
+
+.editor-page{
+    height: 181px;
+    width: 500px;
+
+    display: grid;
+    grid-template-columns: 181px auto;
+
+    gap: 30px;
+}
+
+.editor-page-details{
+    display: grid;
+    gap: 20px;
+}
+
+.editor-page-image{
+    height: 181px;
+    width: 181px;
+    background: #212529 ;
+
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    border-radius: 3px;
+
+}
+
+.page-detail-title{
+    font-size: 16px;
+    font-weight: 400;
+    color: #212529;
+}
+
+
+.editor-popular{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.editor-popular-details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 190px;
+}
+
+
+.editor-popular-time, .editor-popular-desc{
+    color: #E5E5E5;
+}
+
+.editor-popular-title{
+    color: #F8F9FA;
+    font-size: 25px;
+    font-weight: 700;
+}
