@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 0;
     let totalPages = 0;
-    let initialLoad = true;
 
     // Function to load articles based on page number
     function loadArticles(page) {
@@ -15,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 const articlesContainer = document.getElementById('larticles');
                 articlesContainer.innerHTML = ''; // Clear existing articles
 
-                articlesData.forEach(article => {
-                    const articleDiv = document.createElement('div');
+                articlesData.forEach((article, index) => {
+                    const articleDiv = document.createElement('section');
                     articleDiv.classList.add('article');
 
                     const articleImage = document.createElement('div');
                     articleImage.classList.add('article-image');
                     articleImage.style.backgroundImage = `url('./assets/articles/${article.image}')`;
-                    articleImage.style.height = article.height;
+                    articleImage.style.height = getImageHeight(index);
                     articleDiv.appendChild(articleImage);
 
                     const articleDetails = document.createElement('div');
@@ -49,11 +48,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
                 totalPages = Math.ceil(data.articles.length / 8);
                 updatePageNumbers(currentPage + 1, totalPages);
-                initialLoad = false;
             })
             .catch(error => console.error('Error fetching data:', error));
     }
     loadArticles(currentPage);
+
+    function getImageHeight(index) {
+        switch (index % 8) {
+            case 0:
+            case 6:
+            case 7:
+                return '200px';
+            case 1:
+            case 3:
+            case 4:
+                return '370px';
+            case 2:
+            case 5:
+                return '287px';
+            default:
+                return 'auto';
+        }
+    }
+
 
     // Function to update pagination links
     function updatePageNumbers(currentPage, totalPages) {
@@ -69,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             startPage = 1;
             endPage = Math.min(totalPages, startPage + 2);
         }
+    
         if (endPage > totalPages) {
             endPage = totalPages;
             startPage = Math.max(1, endPage - 2);
@@ -100,37 +118,5 @@ document.addEventListener("DOMContentLoaded", function() {
             nextPageLink.textContent = 'Next Page';
             laPagesContainer.appendChild(nextPageLink);
         }
-
-        // Add event listener to pagination links
-        laPagesContainer.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                handlePageClick(link);
-            });
-        });
-
-        // Scroll to the bottom of the page only after the initial load
-        if (!initialLoad) {
-            const screenHeight = window.innerHeight;
-            const yOffset = -Math.floor(0.8 * screenHeight);
-            const y = laPagesContainer.getBoundingClientRect().bottom + window.scrollY + yOffset;
-
-            window.scrollTo({top: y, behavior: 'smooth'});
-        }
-    }
-
-    // Function to handle pagination link click
-    function handlePageClick(link) {
-        const pageNumber = link.textContent;
-        if (pageNumber === 'Prev Page') {
-            currentPage--;
-        }
-        else if (pageNumber === 'Next Page') {
-            currentPage++;
-        } else {
-            currentPage = parseInt(pageNumber) - 1;
-        }
-        
-        loadArticles(currentPage);
     }
 });
