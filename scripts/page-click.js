@@ -151,22 +151,6 @@ function updatePageNumbers(currentPage, totalPages, type) {
 }
 
 
-async function fetchPhotoById(photoId) {
-    const response = await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${photoId}`);
-    const data = await response.json();
-    return data.photo; // Photo object
-}
-
-async function loadBlogImage(page) {
-    try {
-        const photo = await fetchPhotoById(Number(page)+18);
-        document.querySelector('.blog-image').style.backgroundImage = `url('${photo.url}')`;
-    } catch (error) {
-        console.error('Error fetching photo:', error);
-    }
-}
-
-
 
 function loadBlogPost(pageIndex) {
     fetch('../data/blogs.json')
