@@ -217,16 +217,15 @@ function loadLaPost(pageIndex) {
         
             articleElements.forEach((currentArticle, index) => {
                 if (index >= articlesData.length) {
-                    
-
+                    currentArticle.classList.remove("shown");
                     currentArticle.querySelector('.article-image').style.backgroundImage = "";
                     currentArticle.querySelector('.article-time').setAttribute('datetime', '');
                     currentArticle.querySelector('.article-time').textContent = '';
                     currentArticle.querySelector('.article-title').textContent = '';
                     currentArticle.querySelector('.article-desc').textContent = '';
                 } else {
-
-
+                    currentArticle.classList.remove("shown");
+                    currentArticle.classList.add("popup");
                     currentArticle.querySelector('.article-image').style.backgroundImage = `url('./assets/articles/${articlesData[index].image}')`;
                     currentArticle.querySelector('.article-time').setAttribute('datetime', articlesData[index].time);
                     currentArticle.querySelector('.article-time').textContent = articlesData[index].time;

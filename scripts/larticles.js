@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 articlesData.forEach((article, index) => {
                     const articleDiv = document.createElement('section');
                     articleDiv.classList.add('article');
+                    articleDiv.classList.add('popup');
 
                     const articleImage = document.createElement('div');
                     articleImage.classList.add('article-image');
