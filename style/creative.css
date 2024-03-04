@@ -28,6 +28,11 @@
 
     color: #C4C4C4;
     text-align: center;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
 }
 
 .creative-details > *{
@@ -43,16 +48,31 @@
 .creative-pages > a{
     color: #C4C4C4;
     margin: 0px 0px 0px 20px;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;  
 }
 
 .creative-pages .current::before{
     cursor: default;
     content: '-';
     color: #C4C4C4;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000; 
 }
 
 .creative-title, .creative-pages .current{
     font-size: 25px;
     font-weight: 700;
     color: #F8F9FA;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
 }
