@@ -242,43 +242,27 @@ function loadLaPost(pageIndex) {
             const startIndex = pageIndex * 8;
             const endIndex = startIndex + 8;
             const articlesData = data.articles.slice(startIndex, endIndex);
+            const articleElements = document.querySelectorAll('.article');
 
-            // Preload images for smooth transition
-            const preloadImages = [];
-            articlesData.forEach(article => {
-                const image = new Image();
-                image.src = `./assets/articles/${article.image}`;
-                preloadImages.push(image);
+            articleElements.forEach((currentArticle, index) => {
+                if (index >= articlesData.length) {
+                    currentArticle.classList.remove("shown");
+                    currentArticle.querySelector('.article-image').style.backgroundImage = "";
+                    currentArticle.querySelector('.article-time').setAttribute('datetime', '');
+                    currentArticle.querySelector('.article-time').textContent = '';
+                    currentArticle.querySelector('.article-title').textContent = '';
+                    currentArticle.querySelector('.article-desc').textContent = '';
+                } else {
+                    currentArticle.classList.remove("shown");
+                    currentArticle.classList.add("popup");
+                    currentArticle.querySelector('.article-image').style.backgroundImage = `url('./assets/articles/${articlesData[index].image}')`;
+                    currentArticle.querySelector('.article-time').setAttribute('datetime', articlesData[index].time);
+                    currentArticle.querySelector('.article-time').textContent = articlesData[index].time;
+                    currentArticle.querySelector('.article-title').textContent = articlesData[index].title;
+                    currentArticle.querySelector('.article-desc').textContent = articlesData[index].desc;
+                }
             });
-
-            Promise.all(preloadImages.map(image => {
-                return new Promise((resolve, reject) => {
-                    image.onload = resolve;
-                    image.onerror = reject;
-                });
-            })).then(() => {
-                const articleElements = document.querySelectorAll('.article');
-
-                articleElements.forEach((currentArticle, index) => {
-                    if (index >= articlesData.length) {
-                        currentArticle.classList.remove("shown");
-                        currentArticle.querySelector('.article-image').style.backgroundImage = "";
-                        currentArticle.querySelector('.article-time').setAttribute('datetime', '');
-                        currentArticle.querySelector('.article-time').textContent = '';
-                        currentArticle.querySelector('.article-title').textContent = '';
-                        currentArticle.querySelector('.article-desc').textContent = '';
-                    } else {
-                        currentArticle.classList.remove("shown");
-                        currentArticle.classList.add("popup");
-                        currentArticle.querySelector('.article-image').style.backgroundImage = `url('./assets/articles/${articlesData[index].image}')`;
-                        currentArticle.querySelector('.article-time').setAttribute('datetime', articlesData[index].time);
-                        currentArticle.querySelector('.article-time').textContent = articlesData[index].time;
-                        currentArticle.querySelector('.article-title').textContent = articlesData[index].title;
-                        currentArticle.querySelector('.article-desc').textContent = articlesData[index].desc;
-                    }
-                });
-            }).catch(error => console.error('Error preloading images:', error));
-
+            
             totalPages = Math.ceil(data.articles.length / 8);
             updatePageNumbers(currentLaPage + 1, totalPages, 'la');
         })

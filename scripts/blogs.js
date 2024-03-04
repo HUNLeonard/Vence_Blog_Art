@@ -43,24 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function loadBlogImage(page) {
         try {
-            const photo = await fetchPhotoById(Number(page) + 18);
-            const imageUrl = photo.url;
+            const photo = await fetchPhotoById(Number(page)+18);
 
-            const image = new Image();
-            image.onload = function() {
-                // Apply transition only if the image has been previously loaded
-                if (imageLoaded) {
-                    document.querySelector('.blog-image').classList.add('fade');
-                    setTimeout(() => {
-                        document.querySelector('.blog-image').style.backgroundImage = `url('${imageUrl}')`;
-                        document.querySelector('.blog-image').classList.remove('fade');
-                    }, 500);
-                } else {
-                    document.querySelector('.blog-image').style.backgroundImage = `url('${imageUrl}')`;
-                    imageLoaded = true;
-                }
-            };
-            image.src = imageUrl;
+            document.querySelector('.blog-image').style.backgroundImage = `url('${photo.url}')`;
         } catch (error) {
             console.error('Error fetching photo:', error);
         }

@@ -14,61 +14,70 @@ document.addEventListener("DOMContentLoaded", function() {
                 const articlesContainer = document.getElementById('larticles');
                 articlesContainer.innerHTML = ''; // Clear existing articles
 
-                // Preload images for smooth transition
-                const preloadImages = [];
-                articlesData.forEach(article => {
-                    const image = new Image();
-                    image.src = `./assets/articles/${article.image}`;
-                    preloadImages.push(image);
-                });
+                articlesData.forEach((article, index) => {
+                    const articleDiv = document.createElement('section');
+                    articleDiv.classList.add('article');
+                    articleDiv.classList.add('popup');
 
-                Promise.all(preloadImages.map(image => {
-                    return new Promise((resolve, reject) => {
-                        image.onload = resolve;
-                        image.onerror = reject;
-                    });
-                })).then(() => {
-                    // Once all images are preloaded, add them to the DOM
-                    articlesData.forEach((article, index) => {
-                        const articleDiv = document.createElement('section');
-                        articleDiv.classList.add('article');
-                        articleDiv.classList.add('popup');
+                    // Lazy load image using Intersection Observer
+                    const articleImage = document.createElement('div');
+                    articleImage.classList.add('article-image');
+                    articleImage.dataset.src = `./assets/articles/${article.image}`;
+                    articleImage.style.height = getImageHeight(index);
+                    articleDiv.appendChild(articleImage);
 
-                        const articleImage = document.createElement('div');
-                        articleImage.classList.add('article-image');
-                        articleImage.style.backgroundImage = `url('./assets/articles/${article.image}')`;
-                        articleImage.style.height = getImageHeight(index);
-                        articleDiv.appendChild(articleImage);
+                    const articleDetails = document.createElement('div');
+                    articleDetails.classList.add('article-details');
 
-                        const articleDetails = document.createElement('div');
-                        articleDetails.classList.add('article-details');
+                    const articleTime = document.createElement('time');
+                    articleTime.classList.add('article-time');
+                    articleTime.setAttribute('datetime', article.time);
+                    articleTime.textContent = article.time;
+                    articleDetails.appendChild(articleTime);
 
-                        const articleTime = document.createElement('time');
-                        articleTime.classList.add('article-time');
-                        articleTime.setAttribute('datetime', article.time);
-                        articleTime.textContent = article.time;
-                        articleDetails.appendChild(articleTime);
+                    const articleTitle = document.createElement('h3');
+                    articleTitle.classList.add('article-title');
+                    articleTitle.textContent = article.title;
+                    articleDetails.appendChild(articleTitle);
 
-                        const articleTitle = document.createElement('h3');
-                        articleTitle.classList.add('article-title');
-                        articleTitle.textContent = article.title;
-                        articleDetails.appendChild(articleTitle);
-
-                        const articleDesc = document.createElement('p');
-                        articleDesc.classList.add('article-desc');
-                        articleDesc.textContent = article.desc;
-                        articleDetails.appendChild(articleDesc);
-
-                        articleDiv.appendChild(articleDetails);
-                        articlesContainer.appendChild(articleDiv);
-                    });
+                    const articleDesc = document.createElement('p');
+                    articleDesc.classList.add('article-desc');
+                    articleDesc.textContent = article.desc;
+                    articleDetails.appendChild(articleDesc);
+                    
+                    articleDiv.appendChild(articleDetails);
+                    articlesContainer.appendChild(articleDiv);
                 });
                 totalPages = Math.ceil(data.articles.length / 8);
                 updatePageNumbers(currentPage + 1, totalPages);
+
+                lazyLoadImages();
             })
             .catch(error => console.error('Error fetching data:', error));
     }
     loadArticles(currentPage);
+
+    // Function to handle lazy loading of images using Intersection Observer
+    function lazyLoadImages() {
+        const images = document.querySelectorAll('.article-image');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const image = entry.target;
+                    const src = image.dataset.src;
+                    image.removeAttribute('data-src');
+                    image.style.backgroundImage = `url('${src}')`;
+                    imageObserver.unobserve(image);
+                }
+            });
+        },{
+            rootMargin: '100px', // Add 50px margin above and below the viewport
+        });
+
+        images.forEach(image => {
+            imageObserver.observe(image);
+        });
+    }
 
     function getImageHeight(index) {
         switch (index % 8) {
