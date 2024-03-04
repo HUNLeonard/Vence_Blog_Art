@@ -1,1 +1,68 @@
-document.addEventListener("DOMContentLoaded",(function(){var t;t=0,fetch("../data/blogs.json").then((t=>t.json())).then((e=>{const o=e.blogs[t];o&&(document.querySelector(".blog-time").textContent=o.time,document.querySelector(".blog-time").setAttribute("datetime",o.time),document.querySelector(".blog-title").textContent=o["blog-title"],document.querySelector(".blog-desc").textContent=o["blog-desc"],document.querySelector(".blog-auth").textContent=o["blog-auth"]?`By: ${o["blog-auth"]}`:"",document.querySelectorAll(".blog-pages a").forEach(((e,o)=>{const n=(o<9?"0":"")+(o+1);e.textContent=n,o===t?e.classList.add("current"):e.classList.remove("current")})))})).catch((t=>{})),async function(t){try{const e=await async function(t){const e=await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${t}`);return(await e.json()).photo}(Number(t)+18);document.querySelector(".blog-image").style.backgroundImage=`url('${e.url}')`}catch(t){}}(0)}));
+document.addEventListener("DOMContentLoaded", function() {
+    let currentPage = 0;
+    let imageLoaded = false;
+
+    // Function to load blog data based on page number
+    function loadBlogData(page) {
+        fetch('../data/blogs.json')
+            .then(response => response.json())
+            .then(data => {
+                const blog = data.blogs[page];
+                if (blog) {
+                    document.querySelector('.blog-time').textContent = blog.time;
+                    document.querySelector('.blog-time').setAttribute('datetime', blog.time);
+                    document.querySelector('.blog-title').textContent = blog['blog-title'];
+                    document.querySelector('.blog-desc').textContent = blog['blog-desc'];
+                    document.querySelector('.blog-auth').textContent = blog["blog-auth"] ? `By: ${blog["blog-auth"]}` : '';
+
+                    const pageLinks = document.querySelectorAll('.blog-pages a');
+                    pageLinks.forEach((link, i) => {
+                        const pageNumber = (i < 9 ? '0' : '') + (i + 1);
+                        link.textContent = pageNumber;
+                        if (i === page) {
+                            link.classList.add('current');
+                        } else {
+                            link.classList.remove('current');
+                        }
+                    });
+                    // Load blog image after loading blog data
+                    loadBlogImage(page);
+                }
+            })
+            .catch(error => console.error('Error fetching blog data:', error));
+    }
+
+    // Load initial blog data
+    loadBlogData(currentPage);
+
+    async function fetchPhotoById(photoId) {
+        const response = await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${photoId}`);
+        const data = await response.json();
+        return data.photo; // Photo object
+    }
+
+    async function loadBlogImage(page) {
+        try {
+            const photo = await fetchPhotoById(Number(page) + 18);
+            const imageUrl = photo.url;
+
+            const image = new Image();
+            image.onload = function() {
+                // Apply transition only if the image has been previously loaded
+                if (imageLoaded) {
+                    document.querySelector('.blog-image').classList.add('fade');
+                    setTimeout(() => {
+                        document.querySelector('.blog-image').style.backgroundImage = `url('${imageUrl}')`;
+                        document.querySelector('.blog-image').classList.remove('fade');
+                    }, 500);
+                } else {
+                    document.querySelector('.blog-image').style.backgroundImage = `url('${imageUrl}')`;
+                    imageLoaded = true;
+                }
+            };
+            image.src = imageUrl;
+        } catch (error) {
+            console.error('Error fetching photo:', error);
+        }
+    }
+});
