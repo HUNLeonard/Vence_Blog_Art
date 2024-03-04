@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const blog = data.blogs[page];
             if (blog) {
-                document.querySelector('.blog-image').style.backgroundImage = `url('./assets/blogs/${blog.image}')`;
                 document.querySelector('.blog-time').textContent = blog.time;
                 document.querySelector('.blog-time').setAttribute('datetime', blog.time);
                 document.querySelector('.blog-title').textContent = blog['blog-title'];
@@ -31,5 +30,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     // Load initial blog data
     loadBlogData(currentPage);
+    loadBlogImage(currentPage);
+    async function fetchPhotoById(photoId) {
+        const response = await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${photoId}`);
+        const data = await response.json();
+        return data.photo; // Photo object
+    }
+
+    async function loadBlogImage(page) {
+        try {
+            const photo = await fetchPhotoById(Number(page)+18);
+
+            document.querySelector('.blog-image').style.backgroundImage = `url('${photo.url}')`;
+        } catch (error) {
+            console.error('Error fetching photo:', error);
+        }
+    }
+
 });
+
 

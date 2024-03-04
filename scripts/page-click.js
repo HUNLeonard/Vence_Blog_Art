@@ -150,7 +150,20 @@ function updatePageNumbers(currentPage, totalPages, type) {
     }
 }
 
+async function fetchPhotoById(photoId) {
+    const response = await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${photoId}`);
+    const data = await response.json();
+    return data.photo; // Photo object
+}
 
+async function loadBlogImage(page) {
+    try {
+        const photo = await fetchPhotoById(Number(page)+18);
+        document.querySelector('.blog-image').style.backgroundImage = `url('${photo.url}')`;
+    } catch (error) {
+        console.error('Error fetching photo:', error);
+    }
+}
 
 function loadBlogPost(pageIndex) {
     fetch('../data/blogs.json')
@@ -159,7 +172,6 @@ function loadBlogPost(pageIndex) {
             const blog = data.blogs[pageIndex];
             totalBlogPages = data.blogs.length;
 
-            document.querySelector('.blog-image').style.backgroundImage = `url('./assets/blogs/${blog.image}')`;
             document.querySelector('.blog-time').textContent = blog.time;
             document.querySelector('.blog-time').setAttribute('datetime', blog.time);
             document.querySelector('.blog-title').textContent = blog["blog-title"];
@@ -167,6 +179,8 @@ function loadBlogPost(pageIndex) {
             document.querySelector('.blog-auth').textContent = blog["blog-auth"] ? `By: ${blog["blog-auth"]}` : '';
 
             updatePageNumbers(currentBlogPage, totalBlogPages, 'blog');
+
+            loadBlogImage(pageIndex);
         })
         .catch(error => console.error('Error fetching data:', error));
 }
